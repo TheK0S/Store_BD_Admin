@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5a8ce49148d84708abaa5d7c74413df9" Name="Diagram1">
+        <EntityTypeShape EntityType="StoreDBModel.Clients" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreDBModel.OrderLists" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreDBModel.Orders" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreDBModel.Products" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreDBModel.ProductTypes" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreDBModel.Roles" Width="1.5" PointX="5.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreDBModel.Users" Width="1.5" PointX="8" PointY="4.875" IsExpanded="true" />
+        <AssociationConnector Association="StoreDBModel.FK__Orders__ClientId__6477ECF3" ManuallyRouted="false" />
+        <AssociationConnector Association="StoreDBModel.FK__OrderList__Order__68487DD7" ManuallyRouted="false" />
+        <AssociationConnector Association="StoreDBModel.FK__OrderList__Produ__693CA210" ManuallyRouted="false" />
+        <AssociationConnector Association="StoreDBModel.FK__Products__Produc__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="StoreDBModel.FK__Users__RolesId__3A81B327" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

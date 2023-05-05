@@ -33,11 +33,11 @@ namespace Store_BD_Admin.Views
             {
                 if(currentUser.RolesId == 1)
                 {
-
+                    NavigationService.Navigate(new AdminPage());
                 }
                 else if(currentUser.RolesId == 2)
                 {
-
+                    NavigationService.Navigate(new UserPage());
                 }
             }
             else

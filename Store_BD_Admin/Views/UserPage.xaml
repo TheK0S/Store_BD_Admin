@@ -9,6 +9,6 @@
       Title="UserPage">
 
     <Grid Background="LightCyan">
-        
+        <TextBlock Text="Пока нет реализации для User. Ждите обновления!" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15"/>
     </Grid>
 </Page>

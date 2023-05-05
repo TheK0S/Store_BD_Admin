@@ -22,7 +22,7 @@
             
             <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" HorizontalAlignment="Right">                
                 <Button x:Name="update" Content="Update" Width="80" Height="20" Margin="0 0 10 0" Click="update_Click"/>
-                <Button x:Name="delete" Content="Delete" Width="80" Height="20" Margin="0 0 10 0"/>
+                <Button x:Name="delete" Content="Delete" Width="80" Height="20" Margin="0 0 10 0" Click="delete_Click"/>
             </StackPanel>
         </DockPanel>
 
@@ -35,7 +35,7 @@
                             <DataGridTextColumn Header="Id" Width="*" Binding="{Binding Id}"/>
                             <DataGridTextColumn Header="Login" Width="*" Binding="{Binding Login}"/>
                             <DataGridTextColumn Header="Password" Width="*" Binding="{Binding Password}"/>
-                            <DataGridTextColumn Header="Roles" Width="*" Binding="{Binding Roles.Names}"/>
+                            <DataGridTextColumn Header="Roles" Width="*" Binding="{Binding Roles.Name}"/>
                         </DataGrid.Columns>
                     </DataGrid>
                 </TabItem.Content>
@@ -58,16 +58,72 @@
                 <DataGrid x:Name="OrderGrid" AutoGenerateColumns="False">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Id" Width="*" Binding="{Binding Id}"/>
-                        <DataGridTextColumn Header="Name" Width="*" Binding="{Binding Name}"/>
-                        <DataGridTextColumn Header="Price" Width="*" Binding="{Binding Price}"/>
-                        <DataGridTextColumn Header="Description" Width="*" Binding="{Binding Description}"/>
-                        <DataGridTextColumn Header="Image" Width="*" Binding="{Binding Image}"/>
-                        <DataGridTextColumn Header="ProductType" Width="*" Binding="{Binding ProductTypes.Name}"/>
+                        <DataGridTextColumn Header="OrderPrice" Width="*" Binding="{Binding OrderPrice}"/>
+                        <DataGridTextColumn Header="OrderDate " Width="*" Binding="{Binding OrderDate }"/>
+                        <DataGridTextColumn Header="ClientName " Width="*" Binding="{Binding ClientName }"/>
+                        <DataGridTextColumn Header="ProductName " Width="*" Binding="{Binding ProductName }"/>
+                        <DataGridTextColumn Header="Amount " Width="*" Binding="{Binding Amount}"/>
+                        <DataGridTextColumn Header="IsCompleted  " Width="*" Binding="{Binding IsOrderCompleted }"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </TabItem>
             <TabItem x:Name="addActions">
                 <TabItem.Header>Add Actions</TabItem.Header>
+                <TabControl>
+                    <TabItem>
+                        <TabItem.Header>Add User</TabItem.Header>
+                        <StackPanel Margin="20" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <StackPanel Orientation="Horizontal" Margin=" 0 5">
+                                <TextBlock Text="Login:" Width="100" TextAlignment="Right" Margin="0 0 10 0"/>
+                                <TextBox x:Name="loginUser" Width="300"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin=" 0 5">
+                                <TextBlock Text="Password:" Width="100" TextAlignment="Right" Margin="0 0 10 0"/>
+                                <TextBox x:Name="passwordUser" Width="300"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin=" 0 5">
+                                <TextBlock Text="Select roleId:" Width="100" TextAlignment="Right" Margin="0 0 10 0"/>
+                                <ComboBox x:Name="rolesId" Width="100"/>
+                            </StackPanel>
+                            <Button x:Name="add" Content="Add" Width="80" Height="20" Margin="0 10 0 0" Click="add_Click"/>
+                        </StackPanel>
+                    </TabItem>
+                    <TabItem>
+                        <TabItem.Header>Add Client</TabItem.Header>
+                        <StackPanel Grid.Row="1" Orientation="Vertical" Width="300" VerticalAlignment="Center" Margin=" 0 -30 0 0">
+                            <TextBlock Text="Login:"/>
+                            <TextBox x:Name="login" HorizontalContentAlignment="Center"/>
+                            <TextBlock Text="Password:" Margin="0 10 0 0"/>
+                            <TextBox x:Name="password" HorizontalContentAlignment="Center"/>
+                            <TextBlock Text="First name:" Margin="0 10 0 0"/>
+                            <TextBox x:Name="firstName" HorizontalContentAlignment="Center"/>
+                            <TextBlock Text="Last name:" Margin="0 10 0 0"/>
+                            <TextBox x:Name="lastName" HorizontalContentAlignment="Center"/>
+                            <TextBlock Text="Age:" Margin="0 10 0 0"/>
+                            <TextBox x:Name="age" HorizontalContentAlignment="Center" TextChanged="age_TextChanged"/>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 10 0 0">
+                                <Button x:Name="add_btn" Content="Add" Width="80" Height="20" Click="add_btn_Click"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </TabItem>
+                    <TabItem>
+                        <TabItem.Header>Add Product</TabItem.Header>
+                        <StackPanel Orientation="Vertical" Width="300" VerticalAlignment="Center">
+                            <TextBlock Text="Product Name:"/>
+                            <TextBox x:Name="productName" HorizontalContentAlignment="Center"/>
+                            <TextBlock Text="Product Price:" Margin="0 10 0 0"/>
+                            <TextBox x:Name="productPrice" HorizontalContentAlignment="Center" TextChanged="productPrice_TextChanged"/>
+                            <TextBlock Text="Description:" Margin="0 10 0 0"/>
+                            <TextBox x:Name="productDescription" HorizontalContentAlignment="Center"/>
+                            <TextBlock Text="Product type:" Margin="0 10 0 0"/>
+                            <TextBox x:Name="productType" HorizontalContentAlignment="Center" TextChanged="productType_TextChanged"/>
+                            <Button x:Name="add_product_btn" Content="Add" Width="80" Height="20" Margin="0 10 0 0" Click="add_product_btn_Click"/>
+                        </StackPanel>
+                    </TabItem>
+                    <TabItem>
+                        <TabItem.Header>Add Order</TabItem.Header>
+                    </TabItem>
+                </TabControl>
             </TabItem>
         </TabControl>
 

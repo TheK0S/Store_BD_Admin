@@ -28,21 +28,28 @@ namespace Store_BD_Admin.Views
 
         private void signIn_Click(object sender, RoutedEventArgs e)
         {
-            var currentUser = AppData.db.Users.FirstOrDefault(u => u.Login == login.Text && u.Password == password.Text);
-            if(currentUser != null)
+            try
             {
-                if(currentUser.RolesId == 1)
+                var currentUser = AppData.db.Users.FirstOrDefault(u => u.Login == login.Text && u.Password == password.Text);
+                if (currentUser != null)
                 {
-                    NavigationService.Navigate(new AdminPage());
+                    if (currentUser.RolesId == 1)
+                    {
+                        NavigationService.Navigate(new AdminPage());
+                    }
+                    else if (currentUser.RolesId == 2)
+                    {
+                        NavigationService.Navigate(new UserPage());
+                    }
                 }
-                else if(currentUser.RolesId == 2)
+                else
                 {
-                    NavigationService.Navigate(new UserPage());
+                    MessageBox.Show("Нет пользователей с указанными данными");
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Нет пользователей с указанными данными");
+                MessageBox.Show(ex.Message, "Connection Error");
             }
         }
 

@@ -9,6 +9,26 @@
       Title="SignUp">
 
     <Grid Background="LightCyan">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
         
+        <Button x:Name="back_btb" Grid.Row="0" HorizontalAlignment="Left" Content="Back" Width="80" Height="20" Margin="10 0 0 0" Click="back_btn_Click"/>
+        <StackPanel Grid.Row="1" Orientation="Vertical" Width="300" VerticalAlignment="Center" Margin=" 0 -30 0 0">
+            <TextBlock Text="Login:"/>
+            <TextBox x:Name="login" HorizontalContentAlignment="Center"/>
+            <TextBlock Text="Password:" Margin="0 10 0 0"/>
+            <TextBox x:Name="password" HorizontalContentAlignment="Center"/>
+            <TextBlock Text="First name:" Margin="0 10 0 0"/>
+            <TextBox x:Name="firstName" HorizontalContentAlignment="Center"/>
+            <TextBlock Text="Last name:" Margin="0 10 0 0"/>
+            <TextBox x:Name="lastName" HorizontalContentAlignment="Center"/>
+            <TextBlock Text="Age:" Margin="0 10 0 0"/>
+            <TextBox x:Name="age" HorizontalContentAlignment="Center" TextChanged="age_TextChanged"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 10 0 0">
+                <Button x:Name="add_btn" Content="Add" Width="80" Height="20" Click="add_btn_Click"/>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Page>

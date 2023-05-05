@@ -203,7 +203,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\AppData.cs" />
-    <Compile Include="Model\UsersD.cs" />
+    <Compile Include="Model\OrderSplit.cs" />
     <Compile Include="Views\AdminPage.xaml.cs">
       <DependentUpon>AdminPage.xaml</DependentUpon>
     </Compile>

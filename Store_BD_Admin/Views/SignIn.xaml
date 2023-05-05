@@ -18,7 +18,7 @@
             <TextBlock Text="Password:" Margin="0 10 0 0"/>
             <TextBox x:Name="password"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button x:Name="signIn" Content="SignIn" Width="50" Height="20" Margin="10 10 10 0" Click="signIn_Click"/>
+                <Button x:Name="signIn" Content="SignIn" Width="50" Height="20" Margin="10 10 10 0" Click="signIn_Click" IsDefault="True"/>
                 <Button x:Name="signUp" Content="SignUp" Width="50" Height="20" Margin="10 10 10 0" Click="signUp_Click"/>
             </StackPanel>
 
